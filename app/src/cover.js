@@ -182,7 +182,7 @@ function drawTitleBlock(ctx, w, h, state) {
   // Title: bold condensed display face, thick dark outline, soft shadow.
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = `${titleSize}px Anton, "Arial Narrow", sans-serif`;
+  ctx.font = `${titleSize}px "Arial Black", "Arial Narrow", Impact, sans-serif`;
   ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
   ctx.shadowBlur = Math.round(titleSize * 0.12);
   ctx.shadowOffsetY = Math.round(titleSize * 0.06);
@@ -209,7 +209,7 @@ function drawTitleBlock(ctx, w, h, state) {
   ctx.lineTo(cx + rect.w * 0.2, ruleY);
   ctx.stroke();
   // Subtitle: flowing neon script, faint glow.
-  ctx.font = `${subSize}px Pacifico, cursive`;
+  ctx.font = `${subSize}px "Brush Script MT", "Segoe Script", cursive`;
   ctx.shadowColor = 'rgba(255, 46, 136, 0.8)';
   ctx.shadowBlur = Math.round(subSize * 0.45);
   ctx.fillStyle = '#ffe9f4';

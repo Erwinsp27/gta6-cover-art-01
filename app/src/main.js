@@ -31,15 +31,8 @@ const coverCanvas = $('#coverCanvas');
 
 async function loadFonts() {
   try {
-    const anton = new FontFace('Anton', 'url(fonts/Anton-Regular.ttf)');
-    const pacifico = new FontFace('Pacifico', 'url(fonts/Pacifico-Regular.ttf)');
-    document.fonts.add(anton);
-    document.fonts.add(pacifico);
-    await Promise.all([anton.load(), pacifico.load()]);
-    await Promise.all([
-      document.fonts.load('80px Anton'),
-      document.fonts.load('40px Pacifico'),
-    ]);
+    // Bundled fonts removed: system font stacks are used instead.
+    await Promise.resolve();
     fontsReady = true;
   } catch (e) {
     // Fallback faces still render; the cover stays usable.
