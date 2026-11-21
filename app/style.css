@@ -1,0 +1,293 @@
+/* Vice City Cover Studio — editor styling. Dark page, neon accents. */
+
+@font-face {
+  font-family: "Anton";
+  src: url("./fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("./fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0c0a14;
+  --bg-soft: #14101f;
+  --panel: #171226;
+  --line: #2c2144;
+  --ink: #f4eefc;
+  --muted: #a99cc4;
+  --pink: #ff3d8b;
+  --cyan: #2ee6d6;
+  --orange: #ff9a3d;
+  --gold: #ffd166;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255, 61, 139, 0.22), transparent 60%),
+    radial-gradient(800px 500px at -10% 110%, rgba(46, 230, 214, 0.14), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(12, 10, 20, 0.72);
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--ink);
+  text-shadow: 0 0 18px rgba(255, 61, 139, 0.55), 3px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+.brand h1 span { color: var(--cyan); }
+
+.tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.exports { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.export-btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.export-btn:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 14px rgba(255, 61, 139, 0.35);
+  transform: translateY(-1px);
+}
+
+.export-btn.primary {
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  border-color: transparent;
+  color: #fff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  padding: 20px 24px 28px;
+  align-items: start;
+}
+
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 16px;
+}
+
+.controls section h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.layout-btn, .grade-btn, .sample-btn, .toggle-btn, .picker-btn {
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.layout-btn:hover, .grade-btn:hover, .sample-btn:hover,
+.toggle-btn:hover, .picker-btn:hover { border-color: var(--cyan); }
+
+.layout-btn.active, .grade-btn.active, .toggle-btn.on {
+  border-color: var(--pink);
+  background: rgba(255, 61, 139, 0.16);
+  box-shadow: 0 0 12px rgba(255, 61, 139, 0.28) inset;
+}
+
+.grade-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.grade-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+}
+
+.grade-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  flex: none;
+}
+
+.field { display: block; margin-bottom: 10px; }
+
+.field span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.field input[type="text"] {
+  width: 100%;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  padding: 9px 10px;
+  font-size: 14px;
+}
+
+.field input[type="text"]:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(46, 230, 214, 0.25);
+}
+
+.field input[type="range"] { width: 100%; accent-color: var(--pink); }
+
+.samples { display: flex; gap: 8px; margin-bottom: 12px; }
+
+.sample-btn { flex: 1; }
+
+.pickers { display: flex; flex-direction: column; gap: 8px; }
+
+.picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  cursor: pointer;
+}
+
+.picker-row.selected { border-color: var(--cyan); box-shadow: 0 0 10px rgba(46, 230, 214, 0.25); }
+
+.picker-row .thumb {
+  width: 44px;
+  height: 32px;
+  border-radius: 6px;
+  background: #241b38;
+  object-fit: cover;
+  flex: none;
+}
+
+.picker-row .picker-label { font-size: 13px; flex: 1; }
+
+.picker-row .picker-label small { display: block; color: var(--muted); font-size: 11px; }
+
+.picker-btn { padding: 6px 10px; font-size: 12px; }
+
+.note { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 10px 0 0; }
+
+.toggle-row { display: flex; gap: 8px; margin-bottom: 8px; }
+
+.toggle-btn { flex: 1; }
+
+.hint {
+  margin: 0;
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.stage { min-width: 0; }
+
+.canvas-wrap {
+  background: #08060f;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+#preview {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: crosshair;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  touch-action: none;
+}
+
+.cover-only { display: flex; justify-content: center; width: 100%; }
+
+.cover-only canvas {
+  max-width: 100%;
+  max-height: 78vh;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.stage-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 14px 0 0;
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .controls { position: static; }
+  .brand h1 { font-size: 24px; }
+}
