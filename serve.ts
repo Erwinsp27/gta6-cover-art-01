@@ -1,9 +1,7 @@
 // A tiny static server for app/ (Node 22, standard library only), so Vice
-// City Cover Studio can be tried locally without a build step:
-//   node serve.ts            serves app/ on http://localhost:8080
-//   node serve.ts --port 9000
-// It sends the MIME types a browser app needs, refuses any path outside
-// app/, and otherwise does nothing clever.
+// City Cover Studio runs locally without a build step: `node serve.ts`
+// serves app/ on http://localhost:8080. It sends the MIME types a browser
+// app needs, refuses any path outside app/, and otherwise does nothing clever.
 import { createReadStream, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize, resolve, sep } from 'node:path';
@@ -24,11 +22,7 @@ const MIME = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
   '.ttf': 'font/ttf',
-  '.otf': 'font/otf',
-  '.woff': 'font/woff',
-  '.woff2': 'font/woff2',
   '.txt': 'text/plain; charset=utf-8',
 };
 

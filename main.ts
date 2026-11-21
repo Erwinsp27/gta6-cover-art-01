@@ -1,12 +1,12 @@
-// Vice City Cover Studio — a GTA 6-style multi-panel poster cover maker
-// for make.fun's "Make GTA 6 Cover Art" (gta6-cover-art-01). The app is this
-// directory's app/ folder: plain static files a desktop browser loads
-// offline (app/index.html and its ES modules, no library, no network
-// request). This program hands it in: it copies app/ and screenshots/ from
-// beside this file to the output directory and writes dossier.json, the
-// summary the judge reads, with the vendored make.fun library. Serve it
-// locally with `node serve.ts`, then open http://localhost:8080. Outside the
-// grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
+// Vice City Cover Studio — a GTA-style multi-panel poster cover maker for
+// make.fun's "Make GTA 6 Cover Art" (gta6-cover-art-01). The app is this
+// directory's app/ folder: plain static files a browser loads offline
+// (app/index.html and its ES modules, no library, no network request).
+// This program hands it in: it copies app/ and screenshots/ from beside
+// this file to /output and writes /output/dossier.json, the summary the
+// judge reads, with the vendored make.fun library. Serve it locally with
+// `node serve.ts`, then open http://localhost:8080. Outside the grader's
+// container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
